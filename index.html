@@ -1,189 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Mommy 🎁</title>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at top, #ffe4ec, #f5c2d9, #dba3c8);
-      font-family: 'Poppins', sans-serif;
-      color: #5a2a42;
-      overflow: hidden;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 420px;
-      text-align: center;
-      position: relative;
-    }
-
-    /* Gift Box */
-    .gift {
-      cursor: pointer;
-      margin-bottom: 20px;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .gift i {
-      font-size: 90px;
-      color: #ff6fae;
-    }
-
-    .tap-text {
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    /* Card */
-    .card {
-      display: none;
-      background: rgba(255,255,255,0.85);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      animation: fadeUp 0.8s ease;
-    }
-
-    .card.active {
-      display: block;
-    }
-
-    .card h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 22px;
-      margin-bottom: 14px;
-      color: #d94c8e;
-    }
-
-    .card p {
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .next-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #ff8fc7, #ff5fa2);
-      color: white;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .next-btn i {
-      margin-left: 6px;
-    }
-
-    /* Animations */
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* iPhone optimization */
-    @media (max-width: 430px) {
-      .card p {
-        font-size: 13px;
-      }
-      .gift i {
-        font-size: 80px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Mommy 🎁</title>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, #ffe4ec, #f5c2d9, #dba3c8); font-family: 'Poppins', sans-serif; color: #5a2a42; overflow: hidden; }
+.container { width: 90%; max-width: 420px; text-align: center; position: relative; }
+/* Gift Box */
+.gift { cursor: pointer; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+.gift i { font-size: 90px; color: #ff6fae; }
+.tap-text { font-size: 14px; opacity: 0.8; }
+/* Card */
+.card { display: none; background: rgba(255,255,255,0.85); border-radius: 22px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); animation: fadeUp 0.8s ease; }
+.card.active { display: block; }
+.card h2 { font-family: 'Pacifico', cursive; font-size: 22px; margin-bottom: 14px; color: #d94c8e; }
+.card p { font-size: 14px; line-height: 1.7; }
+.next-btn { margin-top: 20px; padding: 10px 20px; border: none; border-radius: 30px; background: linear-gradient(135deg, #ff8fc7, #ff5fa2); color: white; font-size: 14px; cursor: pointer; }
+.next-btn i { margin-left: 6px; }
+/* Animations */
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+/* iPhone optimization */
+@media (max-width: 430px) { .card p { font-size: 13px; } .gift i { font-size: 80px; } }
+video { width: 100%; border-radius: 22px; margin-top: 20px; display: none; }
+video.active { display: block; }
+</style>
 </head>
 <body>
-
-  <div class="container">
-
+<div class="container">
     <!-- Gift -->
     <div class="gift" id="gift">
-      <i class="fa-solid fa-gift"></i>
+        <i class="fa-solid fa-gift"></i>
     </div>
     <div class="tap-text" id="tapText">Tap the gift my mommy 🤭 </div>
 
     <!-- Cards -->
     <div class="card" id="card1">
-      <h2>🎀This is For You</h2>
-      <p>mommy, dis little gift iz only for u pho 😊 today matters bcuz itz abt u n da place u hold in my heart. i made dis slowly, carefully, thinkin of u evry step of da way, hopin u feel how special u r to me 🥺 pls take yor time openin dis, no rush at all. dis moment iz urs, n im just here, excited n happy to give u somethin dat came straight from my love pho u 🤗</p>
-      <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
+        <h2>🎀This is For You</h2>
+        <p>mommy, dis little gift iz only for u pho 😊 today matters bcuz itz abt u n da place u hold in my heart. i made dis slowly, carefully, thinkin of u evry step of da way, hopin u feel how special u r to me 🥺 pls take yor time openin dis, no rush at all. dis moment iz urs, n im just here, excited n happy to give u somethin dat came straight from my love pho u 🤗</p>
+        <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
     </div>
-
     <div class="card" id="card2">
-      <h2>💌What You Mean to me</h2>
-      <p>mommy, u changed my days in ways i didnt even expect 🥰 life feels softer n calmer wit u in it. when im wit u, my heart feels safe, like i finally have a place to rest 😌 even on hard or tiring days, just knowin u exist makes evrythin feel lighter. u r not just important to me, mommy, u r a part of my life dat i never wanna lose ❤️</p>
-      <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
+        <h2>💌What You Mean to me</h2>
+        <p>mommy, u changed my days in ways i didnt even expect 🥰 life feels softer n calmer wit u in it. when im wit u, my heart feels safe, like i finally have a place to rest 😌 even on hard or tiring days, just knowin u exist makes evrythin feel lighter. u r not just important to me, mommy, u r a part of my life dat i never wanna lose ❤️</p>
+        <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
     </div>
-
     <div class="card" id="card3">
-      <h2>🌸What I Love About you</h2>
-      <p>mommy, i see u, even da parts u think no one notices 🥺 i love yor softness, da way u care so deeply, n da strength u show even when u r tired. i notice da little things, how u try even when no one looks, how u keep goin even when u doubt urself. u r beautiful in ways dat go far beyond words, n i love who u r, fully n truly 😚</p>
-      <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
+        <h2>🌸What I Love About you</h2>
+        <p>mommy, i see u, even da parts u think no one notices 🥺 i love yor softness, da way u care so deeply, n da strength u show even when u r tired. i notice da little things, how u try even when no one looks, how u keep goin even when u doubt urself. u r beautiful in ways dat go far beyond words, n i love who u r, fully n truly 😚</p>
+        <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
     </div>
-
     <div class="card" id="card4">
-      <h2>🎂Advance happy birthday</h2>
-      <p>adv happy birthday roanne 🥰 da world iz genuinely better bcuz u exist in it. im so proud of how far u have come, of evry effort u made, n evry challenge u faced 🥹 i wish for u a year full of peace, warmth, growth, n moments dat make u smile without tryin. u deserve to be celebrated today n evryday, bcuz u r precious n deeply loved 😋</p>
-      <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
+        <h2>🎂Advance happy birthday</h2>
+        <p>adv happy birthday roanne 🥰 da world iz genuinely better bcuz u exist in it. im so proud of how far u have come, of evry effort u made, n evry challenge u faced 🥹 i wish for u a year full of peace, warmth, growth, n moments dat make u smile without tryin. u deserve to be celebrated today n evryday, bcuz u r precious n deeply loved 😋</p>
+        <button class="next-btn" onclick="nextCard()">open next <i class="fa-solid fa-heart"></i></button>
     </div>
-
     <div class="card" id="card5">
-      <h2>💍 My promise</h2>
-      <p>mommy, im here, not just today, but alwyz 🥺 i choose u, in good days n bad days, in loud moments n quiet ones. u never have to walk alone, bcuz ill stay by yor side n hold u steady 🤗 u r my favorite gift, my safe place, my forever choice. no matter wat comes, my heart iz n will alwyz be urs 😘</p>
+        <h2>💍 My promise</h2>
+        <p>mommy, im here, not just today, but alwyz 🥺 i choose u, in good days n bad days, in loud moments n quiet ones. u never have to walk alone, bcuz ill stay by yor side n hold u steady 🤗 u r my favorite gift, my safe place, my forever choice. no matter wat comes, my heart iz n will alwyz be urs 😘</p>
+        <button class="next-btn" onclick="showVideo()">watch gift 🎥</button>
     </div>
 
-  </div>
+    <!-- Video at end -->
+    <video id="video" loop muted>
+        <source src="for01.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
+</div>
 
-  <script>
-    let current = 0;
-    const gift = document.getElementById('gift');
-    const tapText = document.getElementById('tapText');
-    const cards = document.querySelectorAll('.card');
+<script>
+let current = 0;
+const gift = document.getElementById('gift');
+const tapText = document.getElementById('tapText');
+const cards = document.querySelectorAll('.card');
+const video = document.getElementById('video');
 
-    gift.addEventListener('click', () => {
-      gift.style.display = 'none';
-      tapText.style.display = 'none';
-      cards[0].classList.add('active');
-      current = 1;
+gift.addEventListener('click', () => {
+    gift.style.display = 'none';
+    tapText.style.display = 'none';
+    cards[0].classList.add('active');
+    current = 1;
 
-      // Play background music after gift tap
-      const audio = new Audio('Ikaw Lang, Lagi Lang.mp3');
-      audio.loop = true;
-      audio.play();
-    });
+    // Play background music after gift tap
+    const audio = new Audio('formimi.wav');
+    audio.loop = true;
+    audio.play();
+});
 
-    function nextCard() {
-      cards[current - 1].classList.remove('active');
-      if (current < cards.length) {
+function nextCard() {
+    cards[current - 1].classList.remove('active');
+    if (current < cards.length) {
         cards[current].classList.add('active');
         current++;
-      }
     }
-  </script>
+}
 
+function showVideo() {
+    cards[current - 1].classList.remove('active');
+    video.classList.add('active');
+    video.play();
+}
+</script>
 </body>
 </html>
